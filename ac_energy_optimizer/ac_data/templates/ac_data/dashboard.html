@@ -1,0 +1,30 @@
+<!-- templates/ac_dashboard.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AC Data Dashboard</title>
+</head>
+<body>
+    <h1>Air Conditioner Data Dashboard</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Room Temperature (°C)</th>
+                <th>AC Temperature (°C)</th>
+                <th>New AC Temperature (°C)</th>
+                <th>Energy Saving Factor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.room_temp }}</td>
+                <td>{{ item.ac_temp }}</td>
+                <td>{{ item.new_ac_temp }}</td>
+                <td>{{ item.energy_saving_factor }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

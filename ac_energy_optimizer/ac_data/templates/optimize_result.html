@@ -1,0 +1,11 @@
+<!-- templates/optimize_result.html -->
+<h2>Optimized Energy Results</h2>
+<p>New AC Temperature: {{ new_ac_temp }}°C</p>
+<p>Energy Saving Factor: {{ energy_saving_factor }}</p>
+
+<!-- Re-render the form for new inputs -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Optimize Again</button>
+</form>
