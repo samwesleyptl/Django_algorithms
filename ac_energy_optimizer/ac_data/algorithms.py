@@ -2,13 +2,13 @@
 def optimize_energy(room_temp, ac_temp):
     if ac_temp < 26:
         if room_temp > 25:
-            mode = "Cooling"
+            mode = "Cool"
             setpoint = room_temp + 1
         elif room_temp < 25:
-            mode = "Cooling"
+            mode = "Cool"
             setpoint = ac_temp + 1
         else:
-            mode = "Cooling"
+            mode = "Cool"
             setpoint = ac_temp
     else:
         mode = "Fan"
