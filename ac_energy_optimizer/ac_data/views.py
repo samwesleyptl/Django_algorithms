@@ -16,7 +16,7 @@ def ac_dashboard(request):
         humidity = data.humidity
 
         # Apply the optimization algorithm
-        new_ac_temp, energy_saving_factor = optimize_energy(room_temp, ac_temp, humidity)
+        new_ac_temp, energy_saving_factor = optimize_energy(room_temp, ac_temp)
 
         processed_data.append({
             "room_temp": room_temp,
@@ -40,7 +40,7 @@ def optimize_energy_view(request):
             humidity = form.cleaned_data['humidity']
 
             # Call the optimize_energy function with the form data
-            new_ac_temp, energy_saving_factor = optimize_energy(room_temp, ac_temp, humidity)
+            new_ac_temp, energy_saving_factor = optimize_energy(room_temp, ac_temp)
 
             # Pass the results to the template
             return render(request, 'optimize_result.html', {
